@@ -1,0 +1,63 @@
+.header-container {
+  display: flex;
+  flex-direction: column;
+  /* background-image: url('/path/to/clouds-background.jpg'); Replace with your cloud image */
+  background-size: cover;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    position: relative;
+    top: 20px;
+    left: 50px;
+  }
+  
+  .mentor, .list, .ai {
+    font-size: 50px;
+    font-weight: bold;
+  }
+  
+  .mentor {
+    color: black;
+  }
+    
+  .ai {
+    color: black;
+    font-size: 20px;
+    /* vertical-align: super; */
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    text-align: left;
+    position: relative;
+    top: 20px;
+    right: 50px;
+  }
+  
+  .user-name {
+    font-size: 20px;
+    line-height: 1.2;
+    padding-right: 20px;
+  }
+  
+  .user-avatar {
+    width: 90px;
+    height: 90px;
+    background-color: lightgray;
+    border-radius: 50%;
+  }

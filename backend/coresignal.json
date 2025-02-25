@@ -1,0 +1,1204 @@
+{
+    "mappings": {
+        "properties": {
+            "id": {
+                "type": "long"
+            },
+            "name": {
+                "type": "text"
+            },
+            "first_name": {
+                "type": "text"
+            },
+            "last_name": {
+                "type": "text"
+            },
+            "title": {
+                "type": "text"
+            },
+            "user_generated_headline": {
+                "type": "text",
+                "fields": {
+                    "exact": {
+                        "type": "keyword",
+                        "null_value": "NULL"
+                    }
+                }
+            },
+            "url": {
+                "type": "text",
+                "fields": {
+                    "exact": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "hash": {
+                "type": "keyword"
+            },
+            "location": {
+                "type": "text"
+            },
+            "industry": {
+                "type": "text",
+                "fields": {
+                    "exact": {
+                        "type": "keyword",
+                        "null_value": "NULL"
+                    }
+                }
+            },
+            "summary": {
+                "type": "text"
+            },
+            "connections": {
+                "type": "keyword"
+            },
+            "recommendations_count": {
+                "type": "long",
+                "null_value": -1
+            },
+            "logo_url": {
+                "type": "keyword"
+            },
+            "last_response_code": {
+                "type": "long",
+                "null_value": -1
+            },
+            "created": {
+                "type": "date",
+                "format": "yyyy-MM-dd HH:mm:ss"
+            },
+            "last_updated": {
+                "type": "date",
+                "format": "yyyy-MM-dd HH:mm:ss"
+            },
+            "outdated": {
+                "type": "byte"
+            },
+            "deleted": {
+                "type": "byte"
+            },
+            "country": {
+                "type": "keyword",
+                "null_value": "NULL"
+            },
+            "connections_count": {
+                "type": "long",
+                "null_value": -1
+            },
+            "experience_count": {
+                "type": "long",
+                "null_value": -1
+            },
+            "member_shorthand_name": {
+                "type": "keyword"
+            },
+            "member_shorthand_name_hash": {
+                "type": "keyword"
+            },
+            "canonical_url": {
+                "type": "text",
+                "fields": {
+                    "exact": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "canonical_hash": {
+                "type": "keyword"
+            },
+            "canonical_shorthand_name": {
+                "type": "keyword"
+            },
+            "canonical_shorthand_name_hash": {
+                "type": "keyword"
+            },
+            "member_also_viewed_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "url": {
+                        "type": "keyword"
+                    },
+                    "title": {
+                        "type": "text"
+                    },
+                    "location": {
+                        "type": "text"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    }
+                }
+            },
+            "member_awards_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "title": {
+                        "type": "text"
+                    },
+                    "issuer": {
+                        "type": "text"
+                    },
+                    "description": {
+                        "type": "text"
+                    },
+                    "date": {
+                        "type": "keyword"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    }
+                }
+            },
+            "member_certifications_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "name": {
+                        "type": "text"
+                    },
+                    "authority": {
+                        "type": "text"
+                    },
+                    "url": {
+                        "type": "keyword"
+                    },
+                    "date_from": {
+                        "type": "date",
+                        "format": "MMMM uuuu||uuuu",
+                        "null_value": "1000"
+                    },
+                    "date_to": {
+                        "type": "date",
+                        "format": "MMMM uuuu||uuuu",
+                        "null_value": "1000"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    }
+                }
+            },
+            "member_courses_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "position": {
+                        "type": "text"
+                    },
+                    "courses": {
+                        "type": "text"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    }
+                }
+            },
+            "member_courses_suggestion_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "course_suggestion_id": {
+                        "type": "long"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    },
+                    "member_courses_suggestion_list": {
+                        "properties": {
+                            "id": {
+                                "type": "long"
+                            },
+                            "name": {
+                                "type": "keyword"
+                            },
+                            "hash": {
+                                "type": "keyword"
+                            },
+                            "url": {
+                                "type": "keyword"
+                            },
+                            "created": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            },
+                            "last_updated": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            }
+                        }
+                    }
+                }
+            },
+            "member_education_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "title": {
+                        "type": "text",
+                        "fields": {
+                            "raw": {
+                                "type": "keyword",
+                                "null_value": "NULL"
+                            }
+                        }
+                    },
+                    "subtitle": {
+                        "type": "text"
+                    },
+                    "date_from": {
+                        "type": "date",
+                        "format": "MMMM uuuu||uuuu",
+                        "null_value": "1000"
+                    },
+                    "date_to": {
+                        "type": "date",
+                        "format": "MMMM uuuu||uuuu",
+                        "null_value": "1000"
+                    },
+                    "activities_and_societies": {
+                        "type": "text"
+                    },
+                    "description": {
+                        "type": "text"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    },
+                    "school_url": {
+                        "type": "text",
+                        "fields": {
+                            "exact": {
+                                "type": "keyword"
+                            }
+                        }
+                    }
+                }
+            },
+            "member_experience_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "title": {
+                        "type": "text"
+                    },
+                    "location": {
+                        "type": "text"
+                    },
+                    "company_name": {
+                        "type": "text",
+                        "fields": {
+                            "raw": {
+                                "type": "keyword",
+                                "null_value": "NULL"
+                            }
+                        }
+                    },
+                    "company_url": {
+                        "type": "keyword"
+                    },
+                    "company_url_shorthand_name": {
+                        "type": "keyword"
+                    },
+                    "company_url_canonical_shorthand_name": {
+                        "type": "keyword"
+                    },
+                    "company_industry": {
+                        "type": "text",
+                        "fields": {
+                            "exact": {
+                                "type": "keyword",
+                                "null_value": "NULL"
+                            }
+                        }
+                    },
+                    "company_website": {
+                        "type": "text",
+                        "fields": {
+                            "exact": {
+                                "type": "keyword",
+                                "null_value": "NULL"
+                            },
+                            "domain_only": {
+                                "type": "text"
+                            }
+                        }
+                    },
+                    "company_employees_count": {
+                        "type": "unsigned_long"
+                    },
+                    "company_size": {
+                        "type": "text",
+                        "fields": {
+                            "exact": {
+                                "type": "keyword",
+                                "null_value": "NULL"
+                            }
+                        }
+                    },
+                    "date_from": {
+                        "type": "date",
+                        "format": "MMMM uuuu||uuuu",
+                        "null_value": "1000"
+                    },
+                    "date_to": {
+                        "type": "date",
+                        "format": "MMMM uuuu||uuuu",
+                        "null_value": "1000"
+                    },
+                    "duration": {
+                        "type": "text"
+                    },
+                    "description": {
+                        "type": "text"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    },
+                    "order_in_profile": {
+                        "type": "long"
+                    },
+                    "company_id": {
+                        "type": "long"
+                    }
+                }
+            },
+            "member_groups_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "name": {
+                        "type": "keyword"
+                    },
+                    "url": {
+                        "type": "keyword"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    }
+                }
+            },
+            "member_interests_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "interest_id": {
+                        "type": "long"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    },
+                    "member_interest_list": {
+                        "properties": {
+                            "id": {
+                                "type": "long"
+                            },
+                            "interest": {
+                                "type": "keyword"
+                            },
+                            "hash": {
+                                "type": "keyword"
+                            },
+                            "created": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            },
+                            "last_updated": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            }
+                        }
+                    }
+                }
+            },
+            "member_languages_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "language_id": {
+                        "type": "long"
+                    },
+                    "proficiency_id": {
+                        "type": "long"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    },
+                    "member_language_list": {
+                        "properties": {
+                            "id": {
+                                "type": "long"
+                            },
+                            "language": {
+                                "type": "keyword"
+                            },
+                            "hash": {
+                                "type": "keyword"
+                            },
+                            "created": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            },
+                            "last_updated": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            }
+                        }
+                    },
+                    "member_language_proficiency_list": {
+                        "properties": {
+                            "id": {
+                                "type": "long"
+                            },
+                            "proficiency": {
+                                "type": "keyword"
+                            },
+                            "hash": {
+                                "type": "keyword"
+                            },
+                            "created": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            },
+                            "last_updated": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            }
+                        }
+                    }
+                }
+            },
+            "member_organizations_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "organization": {
+                        "type": "keyword"
+                    },
+                    "position": {
+                        "type": "keyword"
+                    },
+                    "description": {
+                        "type": "text"
+                    },
+                    "date_from": {
+                        "type": "keyword"
+                    },
+                    "date_to": {
+                        "type": "keyword"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    }
+                }
+            },
+            "member_patents_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "title": {
+                        "type": "text"
+                    },
+                    "status_id": {
+                        "type": "long"
+                    },
+                    "inventors": {
+                        "type": "text"
+                    },
+                    "date": {
+                        "type": "date",
+                        "format": "MMMM uuuu||uuuu",
+                        "null_value": "1000"
+                    },
+                    "url": {
+                        "type": "keyword"
+                    },
+                    "description": {
+                        "type": "text"
+                    },
+                    "valid_area": {
+                        "type": "text"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    },
+                    "member_patent_status_list": {
+                        "properties": {
+                            "id": {
+                                "type": "long"
+                            },
+                            "status": {
+                                "type": "keyword"
+                            },
+                            "hash": {
+                                "type": "keyword"
+                            },
+                            "created": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            },
+                            "last_updated": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            }
+                        }
+                    }
+                }
+            },
+            "member_posts_see_more_urls_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "url": {
+                        "type": "keyword"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    }
+                }
+            },
+            "member_projects_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "name": {
+                        "type": "text"
+                    },
+                    "url": {
+                        "type": "keyword"
+                    },
+                    "description": {
+                        "type": "text"
+                    },
+                    "date_from": {
+                        "type": "date",
+                        "format": "MMMM uuuu||uuuu",
+                        "null_value": "1000"
+                    },
+                    "date_to": {
+                        "type": "date",
+                        "format": "MMMM uuuu||uuuu",
+                        "null_value": "1000"
+                    },
+                    "team_members": {
+                        "type": "text"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    }
+                }
+            },
+            "member_publications_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "title": {
+                        "type": "text"
+                    },
+                    "publisher": {
+                        "type": "keyword"
+                    },
+                    "date": {
+                        "type": "date",
+                        "format": "MMMM uuuu||uuuu",
+                        "null_value": "1000"
+                    },
+                    "description": {
+                        "type": "text"
+                    },
+                    "authors": {
+                        "type": "text"
+                    },
+                    "url": {
+                        "type": "keyword"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    }
+                }
+            },
+            "member_recommendations_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "recommendation": {
+                        "type": "text"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    }
+                }
+            },
+            "member_similar_profiles_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "url": {
+                        "type": "keyword"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    }
+                }
+            },
+            "member_skills_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "skill_id": {
+                        "type": "long"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    },
+                    "member_skill_list": {
+                        "properties": {
+                            "id": {
+                                "type": "long"
+                            },
+                            "skill": {
+                                "type": "text"
+                            },
+                            "hash": {
+                                "type": "keyword"
+                            },
+                            "created": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            },
+                            "last_updated": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            }
+                        }
+                    }
+                }
+            },
+            "member_test_scores_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "name": {
+                        "type": "text"
+                    },
+                    "date": {
+                        "type": "keyword"
+                    },
+                    "description": {
+                        "type": "text"
+                    },
+                    "score": {
+                        "type": "keyword"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    }
+                }
+            },
+            "member_volunteering_cares_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "care_id": {
+                        "type": "long"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    },
+                    "member_volunteering_care_list": {
+                        "properties": {
+                            "id": {
+                                "type": "long"
+                            },
+                            "care": {
+                                "type": "keyword"
+                            },
+                            "hash": {
+                                "type": "keyword"
+                            },
+                            "created": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            },
+                            "last_updated": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            }
+                        }
+                    }
+                }
+            },
+            "member_volunteering_opportunities_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "opportunity_id": {
+                        "type": "long"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    },
+                    "member_volunteering_opportunity_list": {
+                        "properties": {
+                            "id": {
+                                "type": "long"
+                            },
+                            "opportunity": {
+                                "type": "keyword"
+                            },
+                            "hash": {
+                                "type": "keyword"
+                            },
+                            "created": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            },
+                            "last_updated": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            }
+                        }
+                    }
+                }
+            },
+            "member_volunteering_positions_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "organization": {
+                        "type": "text"
+                    },
+                    "role": {
+                        "type": "keyword"
+                    },
+                    "cause_id": {
+                        "type": "long"
+                    },
+                    "date_from": {
+                        "type": "keyword"
+                    },
+                    "date_to": {
+                        "type": "keyword"
+                    },
+                    "duration": {
+                        "type": "keyword"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    },
+                    "description": {
+                        "type": "text"
+                    },
+                    "organization_url": {
+                        "type": "keyword"
+                    },
+                    "member_volunteering_positions_cause_list": {
+                        "properties": {
+                            "id": {
+                                "type": "long"
+                            },
+                            "cause": {
+                                "type": "keyword"
+                            },
+                            "hash": {
+                                "type": "keyword"
+                            },
+                            "created": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            },
+                            "last_updated": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            }
+                        }
+                    }
+                }
+            },
+            "member_volunteering_supports_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "support_id": {
+                        "type": "long"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    },
+                    "member_volunteering_support_list": {
+                        "properties": {
+                            "id": {
+                                "type": "long"
+                            },
+                            "support": {
+                                "type": "keyword"
+                            },
+                            "hash": {
+                                "type": "keyword"
+                            },
+                            "created": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            },
+                            "last_updated": {
+                                "type": "date",
+                                "format": "yyyy-MM-dd HH:mm:ss"
+                            }
+                        }
+                    }
+                }
+            },
+            "member_websites_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "website": {
+                        "type": "keyword"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    }
+                }
+            },
+            "member_hidden_status_collection": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "member_id": {
+                        "type": "long"
+                    },
+                    "is_hidden": {
+                        "type": "byte"
+                    },
+                    "created": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "last_updated": {
+                        "type": "date",
+                        "format": "yyyy-MM-dd HH:mm:ss"
+                    },
+                    "deleted": {
+                        "type": "byte"
+                    }
+                }
+            }
+        }
+    }
+}
